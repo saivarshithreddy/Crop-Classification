@@ -39,16 +39,6 @@ See `references/references.bib` for citations and key literature.
 
 ---
 
-**Project Structure:**
-- `src/` - Core code and scripts
-- `notebooks/` - Jupyter notebooks (EDA, experiments)
-- `data/` - Raw and processed data
-- `results/` - Model outputs and figures
-- `reports/` - Research report and drafts
-- `references/` - Papers and BibTeX
-
----
-
 ## Author
 **B. Sai Varshith Reddy**  
 Researcher in Machine Learning & Remote Sensing  
