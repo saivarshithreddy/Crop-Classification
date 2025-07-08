@@ -1,52 +1,57 @@
-Crop Type Classification with Satellite Imagery
+# Crop Classification Using Remote Sensing and Machine Learning
 
-This project involves classifying crop types using multi-spectral satellite images provided by Radiant Earth. It includes data download, preprocessing, feature extraction, and model training to predict crop types.
+## Abstract
+This project investigates advanced crop classification using multi-temporal satellite imagery and machine learning. We explore several feature engineering techniques, ensemble models, and spatial analysis to improve classification accuracy on the [Radiant MLHub African Crops Dataset](https://mlhub.earth/data/ref_african_crops_kenya_02/).
 
-Project Structure
+## Motivation & Background
+Crop classification is a fundamental task in precision agriculture and food security monitoring. Accurate crop mapping enables better resource allocation, yield estimation, and policy making. This project explores state-of-the-art approaches to multi-class crop identification using Sentinel-2 imagery and open-source tools.
 
-Data Download: Uses Radiant Earth API to download satellite imagery and field labels.
+## Dataset
+- **Source:** Radiant MLHub African Crops Kenya 02
+- **Type:** Multi-temporal Sentinel-2 imagery and field-level labels
+- **Features:** Pixel values, vegetation indices (NDVI, AVI, etc.), spatial features
 
-Feature Extraction:
+## Methodology
+- **Data Acquisition:** Automated download and organization of satellite imagery and labels.
+- **Preprocessing:** Image cleaning, feature extraction (spectral indices, spatial features).
+- **Exploratory Data Analysis:** Visualizations, class distributions, and correlation analysis.
+- **Modeling:** Ensemble of CatBoost, Random Forest, and LDA with class balancing.
+- **Evaluation:** Log-loss, per-pixel and per-field metrics, cross-validation.
 
-Image pixel values
+## Experiments & Results
+- Multiple feature sets compared (raw pixels, indices, spatial).
+- Ensemble models outperform individual learners.
+- Detailed results and figures in `notebooks/` and `reports/`.
 
-Spectral indices (like NDVI, AVI)
+## Discussion & Future Work
+- Investigate deep learning (CNNs) for further improvement.
+- Integrate temporal analysis for crop growth stage modeling.
+- Explore transfer learning and domain adaptation.
 
-Spatial features (e.g., area of field)
+## How to Reproduce
+1. Clone the repo
+2. Install dependencies: `pip install -r requirements.txt`
+3. Download data using provided scripts
+4. Run notebooks in order
 
-Modeling Approaches:
+## References
+See `references/references.bib` for citations and key literature.
 
-Approach 1: Uses all features (pixels + indices + spatial features).
+---
 
-Approach 2: Uses only pixel values and statistics.
+**Project Structure:**
+- `src/` - Core code and scripts
+- `notebooks/` - Jupyter notebooks (EDA, experiments)
+- `data/` - Raw and processed data
+- `results/` - Model outputs and figures
+- `reports/` - Research report and drafts
+- `references/` - Papers and BibTeX
 
-Both approaches use:
+---
 
-CatBoost Classifier (with and without class weights)
+## Author
+**B. Sai Varshith Reddy**  
+Researcher in Machine Learning & Remote Sensing  
+Contact: saivarshithreddybonala@gmail.com  
 
-Bagged Linear Discriminant Analysis (LDA)
-
-Ensembling (weighted average) is used to combine the models.
-
-How It Works
-
-Download satellite imagery and labels using the API.
-
-Extract relevant pixel and statistical features for each field.
-
-Train models using the extracted features.
-
-Predict crop type for each field.
-
-Generate a CSV submission file.
-
-Requirements
-
-sklearn==0.22.2
-eli5==0.10.1
-catboost==0.22
-scipy==1.4.1
-numpy==1.18.3
-pandas==1.0.3
-tifffile
-
+This project is a research effort for advanced crop classification and is intended for academic and educational use.
